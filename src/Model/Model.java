@@ -1,47 +1,43 @@
 package Model;
-import javafx.scene.paint.Color;
 
 
 import java.util.ArrayList;
 
 public class Model {
-    public  int pointCount;
-public  ArrayList<Points>p;
+
+    public ArrayList<Shape> p;
 
     public Model() {
-
-        this.pointCount = pointCount;
-        this.p = new ArrayList<Points>();
+        this.p = new ArrayList<Shape>();
     }
+
     public int getPointCount()
     {
         return p.size();
     }
 
-    public void addPoint(Points point)
-    {
-    p.add(point);
+    public void addPoint(Shape shape) {
+        p.add(shape);
     }
-public void  remuvePoint(Points point)
-{
-   this.p.remove(point);
-}
-    public Points getPoint(int i)
-    {
+
+    public void removePoint(Shape shape) {
+        this.p.remove(shape);
+    }
+
+    public Shape getShape(int i) {
         return this.p.get(i);
     }
-    public  void  deleteArray()
-    {
-    p.clear();
+
+    public void deleteArray() {
+        p.clear();
     }
-    public int serchPoint(int x, int y)
-    {
+
+    public int searchShape(int x, int y) {
         int index = -1;
         for (int i = 0; i < this.p.size(); i++)
         {
-            if (this.p.get(i).x == x && this.p.get(i).y == y) index = i;
+            if (this.p.get(i).getX() == x && this.p.get(i).getY() == y) index = i;
         }
         return index;
     }
-
 }
